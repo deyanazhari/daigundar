@@ -17,7 +17,8 @@ while($pecah = $ambil->fetch_assoc())
 
 <!DOCTYPE html>
 <html lang="en">
-    <title>Pencarian</title>
+<title>Pencarian</title>
+
 <head>
 
     <meta charset="utf-8">
@@ -103,44 +104,45 @@ while($pecah = $ambil->fetch_assoc())
                         </li>
                         <?php endif ?>
                     </ul>
-                        <form action="pencarian.php" method="get" class="navbar-form navbar-right">
-                            <input type="text" class="form-control" name="keyword">
-                            <button class="btn btn-primary">Cari</button>
-                        </form>
+                    <form action="pencarian.php" method="get" class="d-flex" style="place-items: right">
+                        <input type="text" class="form-control" name="keyword">
+                        <button class="btn btn-primary">Cari</button>
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
     <div class="banner header-text"></div>
-        <div class="container">
-            <h3>Hasil Pencarian : <?php echo $keyword ?></h3>
+    <div class="container">
+        <h3>Hasil Pencarian : <?php echo $keyword ?></h3>
 
-            <?php if (empty($semuadata)): ?>
-                <div class="alert alert-danger">Produk <strong><?php echo $keyword ?></strong>tidak ditemukan</div>
-            <?php endif ?>
+        <?php if (empty($semuadata)): ?>
+        <div class="alert alert-danger">Produk <strong><?php echo $keyword ?></strong>tidak ditemukan</div>
+        <?php endif ?>
+
+        <div class="row">
+
+            <?php foreach ($semuadata as $key => $value): ?>
 
             <div class="row">
-
-                <?php foreach ($semuadata as $key => $value): ?>
-
-                <div class="row">
                 <div class="col-md-4">
-                <div class="product-item">
+                    <div class="product-item">
                         <img src="foto_produk/<?php echo $value["foto_produk"] ?>" alt="" class="img-responsive">
                         <div class="caption">
                             <h3><?php echo $value["nama_produk"] ?></h3>
                             <h5>Rp. <?php echo number_format($value['harga_produk']) ?></h5>
                             <a href="beli.php?id=<?php echo $value["id_produk"]; ?>" class="btn btn-primary">Beli</a>
-                            <a href="detail.php?id=<?php echo $value["id_produk"]; ?>" class="btn btn-default">Detail</a>
-                        
+                            <a href="detail.php?id=<?php echo $value["id_produk"]; ?>"
+                                class="btn btn-default">Detail</a>
+
+                        </div>
                     </div>
                 </div>
-                </div>
-                </div>
-                <?php endforeach ?>
             </div>
+            <?php endforeach ?>
         </div>
-        
+    </div>
+
 
     <footer class="pt-4 pb-4 text-center bg-light">
         <div class="container">

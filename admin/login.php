@@ -27,7 +27,7 @@ include 'config.php';
         <div class="row text-center">
             <div class="col-md-12">
                 <br /><br />
-                <h2>Lepas Hijab : Login</h2>
+                <h2>Daigundar : Login</h2>
                 <h5>(Silahkan Login Untuk Mendapatkan Akses)</h5>
                 <br />
             </div>

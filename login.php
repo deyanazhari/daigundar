@@ -31,7 +31,7 @@ include 'config.php';
 <body>
 
     <div class="limiter">
-        <div class="container-login100" style="background-image: url('assets/images/background.jpeg');">
+        <div class="container-login100" style="background-image: url('assets/images/foto.png');">
             <div class="wrap-login100 p-t-30 p-b-50">
                 <span class="login100-form-title p-b-41">
                     Account Login
@@ -77,7 +77,7 @@ include 'config.php';
             }
             else
             {
-                echo "<script>location='riwayat.php';</script>";
+                echo "<script>location='index.php';</script>";
             }
         }
         else

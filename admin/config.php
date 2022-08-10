@@ -1,2 +1,2 @@
 <!-- -->
-<?php $koneksi = new mysqli ("localhost","root","","lepashijab"); ?>
+<?php $koneksi = new mysqli ("localhost","root","","daigundar"); ?>

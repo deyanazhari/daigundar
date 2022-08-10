@@ -2,6 +2,7 @@
 session_start();
 //koneksi database
 include 'config.php';
+include 'navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,7 @@ include 'config.php';
         rel="stylesheet">
 
 
-    <title>Lepas Hijab</title>
+    <title>Daigundar Store</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,70 +45,18 @@ include 'config.php';
     </div>
     <!-- ***** Preloader End ***** -->
 
-    <!-- Heade -->
-    <header class="" style="background-color: #3f5a5e;">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="produk.php">
-                    <h2>Lepas <em style="color:#FF6366">Hijab</em></h2>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="produk.php">Produk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="keranjang.php">Keranjang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="checkout.php">Checkout</a>
-                        </li>
-                        <!-- Jika sudah login -->
-                        <?php if (isset ($_SESSION["pelanggan"])): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="riwayat.php">Riwayat Belanja</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Logout</a>
-                        </li>
-                        <!--jika belum login -->
-                        <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="daftar.php">Daftar</a>
-                        </li>
-                        <?php endif ?>
-                    </ul>
-                    <form action="pencarian.php" method="get" class="d-flex" style="place-items: right">
-                        <input type="text" class="form-control" name="keyword">
-                        <button class="btn btn-primary">Cari</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
+   
 
     <!-- Page Content -->
     <div class="page-heading products-heading header-text"
-        style="background-image:url(assets/images/produk-bg.jpeg);padding: 300px 0px;">
+        style="background-image:url(assets/images/sepatu.jpg);padding: 300px 0px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="text-content">
-                        <h4>new arrivals</h4>
-                        <h2 style="font-size: 30px;">Lepas Hijab produk</h2>
-                    </div>
+                <div class="text-content ">
+                    <h4 style="text-shadow: 1px 1px 0px black;">Daigundar</h4>
+                    <h2 style="font-size:40px; text-shadow: 1px 1px 0px black; color: #11999B;">Selamat Datang Di Daigundar</h2>
+                </div>
                 </div>
             </div>
         </div>
@@ -149,34 +98,9 @@ include 'config.php';
         </div>
 
 
-        <footer class="pt-4 pb-4 text-center bg-light">
-            <div class="container">
-                <div class="my-3">
-                    <div class=""
-                        style="font-family: 'Nunito', sans-serif;font-size:27px;font-weight:800;color:#3f5a5e;">
-                        Lepas
-                        Hijab</div>
-                    <p>Belanja & Retail</p>
-                    <div class="social-nav">
-                        <nav role="navigation">
-                            <ul class="nav justify-content-center">
-
-                                <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/lepashijab"
-                                        title="Instagram"><i class="fab fa-instagram fa-2x"></i><span
-                                            class="menu-title sr-only">Instagram</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/"
-                                        title="LinkedIn"><i class="fab fa-whatsapp fa-2x"></i><span
-                                            class="menu-title sr-only">LinkedIn</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/"
-                                        title="LinkedIn"><i class="fas fa-store fa-2x"></i><span
-                                            class="menu-title sr-only">LinkedIn</span></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="text-small text-secondary">
-                    <div class="mb-1">&copy; All rights reserved.</div>
-        </footer>
+       <?php
+       include 'footer.php'
+       ?>
 
 
         <!-- Bootstrap core JavaScript -->

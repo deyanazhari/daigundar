@@ -1,7 +1,6 @@
 <?php
-session_start();
-//koneksi database
-$koneksi = new mysqli ("localhost","root","","lepashijab");
+include 'config.php';
+include 'navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,7 @@ $koneksi = new mysqli ("localhost","root","","lepashijab");
         href="https://fonts.googleapis.com/css2?family=Gidugu&family=Nunito:wght@700;800&family=Oswald&family=Outfit&family=Roboto&family=Roboto+Condensed&family=Spectral:wght@500&display=swap"
         rel="stylesheet">
 
-    <title>Lepas Hijab</title>
+    <title>Daigundar Store</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,13 +30,14 @@ $koneksi = new mysqli ("localhost","root","","lepashijab");
     <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
     <!-- ***** Preloader Start **** -->
-    <div id="preloader">
+    <div id="preloader" style="background-color: #3f5a5e;">
         <div class="jumper">
             <div></div>
             <div></div>
@@ -47,80 +47,19 @@ $koneksi = new mysqli ("localhost","root","","lepashijab");
     <!-- ***** Preloader End ***** -->
 
     <!-- Header -->
-    <header class="" style="background-color: #3f5a5e;">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">
-                    <h2>Lepas <em style="color:#FF6366">Hijab</em></h2>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.php">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="produk.php">Produk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="keranjang.php">Keranjang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="checkout.php">Checkout</a>
-                        </li>
-                        <!-- Jika sudah login -->
-                        <?php if (isset ($_SESSION["pelanggan"])): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="riwayat.php">Riwayat Belanja</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Logout</a>
-                        </li>
-                        <!--jika belum login -->
-                        <?php else: ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="daftar.php">Daftar</a>
-                        </li>
-                        <?php endif ?>
-                    </ul>
-                    <form action="pencarian.php" method="get" class="d-flex" style="place-items: right">
-                        <input type="text" class="form-control" name="keyword">
-                        <button class="btn btn-primary">Cari</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
+    
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
-    <div class="banner header-text">
-        <div class="owl-banner owl-carousel">
-            <div class="banner-item-01 blur" style="background-image: url(assets/images/bg1.jpg);">
-                <div class="text-content">
-                    <h4 style="text-shadow: 1px 1px 0px white;">Lepas Hijab</h4>
-                    <h2 style="font-size:40px;">Lepaskan Cantikmu Dengan Hijab</h2>
+    <div class="page-heading products-heading header-text"
+        style="background-image:url(assets/images/foto.png);padding: 300px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <div class="text-content ">
+                    <h4 style="text-shadow: 1px 1px 0px black;">Daigundar</h4>
+                    <h2 style="font-size:40px; text-shadow: 1px 1px 0px black; color: #11999B;">Selamat Datang Di Daigundar</h2>
                 </div>
-            </div>
-            <div class="banner-item-02 blur" style="background-image: url(assets/images/bg2.png);">
-                <div class="text-content">
-                    <h4></h4>
-                    <h2 style="font-size: 30px;">Dapatkan Produk Dengan Harga Terbaik
-                    </h2>
-                </div>
-            </div>
-            <div class="banner-item-03" style="background-image: url(assets/images/header3.png);">
-                <div class="text-content">
-                    <h4></h4>
-                    <h2></h2>
                 </div>
             </div>
         </div>
@@ -163,67 +102,36 @@ $koneksi = new mysqli ("localhost","root","","lepashijab");
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading">
-                        <h2 style="font-family: 'Nunito', sans-serif;font-weight:700;">Tentang Lepas Hijab</h2>
+                        <h2 style="font-family: 'Nunito', sans-serif;font-weight:700;">Tentang Daigundar</h2>
                     </div>
                 </div>
                 <div class=" col-md-6">
                     <div class="left-content">
-                        <h4 style="color:#3f5a5e;">Apa itu Lepas Hijab?</h4>
+                        <h4 style="color:#3f5a5e;">Apa itu Daigundar</h4>
                         <p><a rel="nofollow" href="https://templatemo.com/tm-546-sixteen-clothing"
-                                target="_parent">Lepas Hijab </a>merupakan salah satu brand yang memperkuat
-                            fashion hijab
-                            Tanah Air sejak tahun 2020. Lepas Hijab hadir dengan koleksi bergaris feminin yang
-                            mengusung
-                            gaya untuk semua tipe kepribadian perempuan Indonesia. Mereka yang trendi dengan
-                            gaya muda
-                            ceria, klasik maupun eksklusif, dan selalu tampil beda di setiap kesempatan, akan
-                            semakin
-                            percaya diri dengan koleksi Lepas Hijab.</p>
+                                target="_parent">Daigundar Store adalah toko jual beli sepatu bekas yang kualitas barang nya terjamin kualitas nya</p>
                         <ul class="featured-list">
-                            <li><a href="#">Tidak ada garis tengah</a></li>
+                            <!-- <li><a href="#">Tidak ada garis tengah</a></li>
                             <li><a href="#">Full Plisket</a></li>
                             <li><a href="#">Bahan kualitas terbaik</a></li>
                             <li><a href="#">Finishing jahit tepi rapih</a></li>
-                            <li><a href="#">Motif printing detail premium</a></li>
+                            <li><a href="#">Motif printing detail premium</a></li> -->
                         </ul>
 
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="right-image">
-                        <img src="assets/images/tentang-bg.png" style="width: 410px; height: 400px;">
+                        <img src="assets/images/about.jpg" style="width: 410px; height: 400px;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="pt-4 pb-4 text-center bg-light">
-        <div class="container">
-            <div class="my-3">
-                <div style="font-family: 'Nunito', sans-serif;font-size:27px;font-weight:800;color:#3f5a5e;">LEPAS HIJAB
-                </div>
-                <p>Belanja & retail</p>
-                <div class="social-nav">
-                    <nav role="navigation">
-                        <ul class="nav justify-content-center">
-
-                            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/lepashijab"
-                                    title="Instagram"><i class="fab fa-instagram fa-2x"></i><span
-                                        class="menu-title sr-only">Instagram</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://wa.me/6285929925995"
-                                    title="Whatsapp"><i class="fab fa-whatsapp fa-2x"></i><span
-                                        class="menu-title sr-only">Whatsapp</span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/"
-                                    title="LinkedIn"><i class="fas fa-store fa-2x"></i><span
-                                        class="menu-title sr-only">LinkedIn</span></a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div class="text-small text-secondary">
-                <div class="mb-1">&copy; All rights reserved.</div>
-    </footer>
+    <?php
+    include'footer.php'
+    ?>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
